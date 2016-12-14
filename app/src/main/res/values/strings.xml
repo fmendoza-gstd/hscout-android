@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">HelpScout</string>
     <string name="conversations">conversations</string>
+    <string name="title_activity_mailbox">MailboxActivity</string>
 </resources>
