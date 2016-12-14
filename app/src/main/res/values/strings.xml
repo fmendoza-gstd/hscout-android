@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">HelpScout</string>
+    <string name="conversations">conversations</string>
 </resources>
