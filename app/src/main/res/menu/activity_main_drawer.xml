@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home_black_24dp"
+            android:title="Unassigned"
+            app:actionLayout="@layout/menu_counter"/>
+        <item
+            android:id="@+id/nav_photos"
+            android:icon="@drawable/ic_photo_library_black_24dp"
+            app:actionLayout="@layout/menu_counter"
+            android:title="Mine" />
+        <item
+            android:id="@+id/nav_movies"
+            android:icon="@drawable/ic_local_movies_black_24dp"
+            android:title="Drafts" />
+
+        <item
+            android:id="@+id/nav_notifications"
+            android:icon="@drawable/ic_notifications_black_24dp"
+            android:title="Assigned" />
+
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_settings_black_24dp"
+            android:title="Closed" />
+
+        <item
+            android:id="@+id/nav_spam"
+            android:icon="@drawable/ic_settings_black_24dp"
+            android:title="Spam" />
+    </group>
+
+    <item android:title="TEAMS">
+        <menu>
+            <group android:checkableBehavior="single">
+            <item
+                android:id="@+id/nav_about_us"
+                android:icon="@drawable/ic_photo_library_black_24dp"
+                android:title="Product" />
+            <item
+                android:id="@+id/nav_privacy_policy"
+                android:icon="@drawable/ic_home_black_24dp"
+                android:title="Marketing" />
+            </group>
+        </menu>
+    </item>
+
+
+
+    <item android:title="FOLDERS">
+        <menu>
+            <group android:checkableBehavior="single">
+            <item
+                android:id="@+id/nav_"
+                android:icon="@drawable/ic_photo_library_black_24dp"
+                android:title="1. VIP Conversations" />
+            <item
+                android:id="@+id/nav_privacy"
+                android:icon="@drawable/ic_home_black_24dp"
+                android:title="2. Waiting 6 Days" />
+            </group>
+        </menu>
+    </item>
+
+</menu>
