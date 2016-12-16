@@ -55,11 +55,6 @@ public class ConversationAdapter2  extends RecyclerView.Adapter<ConversationAdap
         holder.txtTitleMessage.setText(conversationItems.get(position).getTitleMessage());
         holder.txtPartContentMessage.setText(conversationItems.get(position).getContentMessage());
 
-        Random r = new Random();
-        int i1 = r.nextInt(10 - 1) + 1;
-
-        //holder.recyclerView.setAdapter(new NumberedAdapter(i1));
-
         holder.recyclerView.setAdapter(new NumberedAdapter(conversationItems.get(position).getListTicket()));
 
     }
@@ -98,15 +93,9 @@ public class ConversationAdapter2  extends RecyclerView.Adapter<ConversationAdap
             //   app_badge_layout = (BadgeLayout) itemView.findViewById(R.id.app_badge_layout);
 
             recyclerView = (RecyclerView) itemView.findViewById(R.id.recycler_view);
-            recyclerView.addItemDecoration(new MarginDecoration(context));
-            recyclerView.setHasFixedSize(true);
+           // recyclerView.addItemDecoration(new MarginDecoration(context));
+            //recyclerView.setHasFixedSize(true);
             recyclerView.setLayoutManager(new GridLayoutManager(context, 4));
-
-            Random r = new Random();
-            int i1 = r.nextInt(10 - 1) + 1;
-
-            recyclerView.setAdapter(new NumberedAdapter(i1));
-
 
         }
 

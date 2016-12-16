@@ -1,0 +1,29 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+<!--
+    <item android:id="@+id/action_settings"
+        android:title="action_settings"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+        -->
+
+    <item android:id="@+id/action_buscar"
+        android:title="ic_position"
+        android:icon="@mipmap/ic_position"
+        android:orderInCategory="100"
+        app:showAsAction="ifRoom" />
+
+    <item android:id="@+id/action_nuevo"
+        android:title="action_nuevo"
+        android:icon="@mipmap/ic_download"
+        android:orderInCategory="100"
+        app:showAsAction="ifRoom|withText" />
+
+    <item android:id="@+id/action_person"
+        android:title="action_nuevo"
+        android:icon="@mipmap/ic_menu"
+        android:orderInCategory="100"
+        app:showAsAction="ifRoom|withText" />
+
+</menu>

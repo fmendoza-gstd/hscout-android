@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,6 +19,7 @@ import objects.Ticket;
  */
 public class NumberedAdapter extends RecyclerView.Adapter<TextViewHolder> {
     private List<String> labels;
+    private List<Ticket> ticketItems;
 
     public NumberedAdapter(int count) {
         labels = new ArrayList<String>(count);
@@ -27,6 +29,7 @@ public class NumberedAdapter extends RecyclerView.Adapter<TextViewHolder> {
     }
 
     public NumberedAdapter(List<Ticket> ticketItems) {
+        this.ticketItems=ticketItems;
         labels = new ArrayList<String>(ticketItems.size());
         for (int i = 0; i < ticketItems.size(); ++i) {
             labels.add(ticketItems.get(i).getName());
@@ -36,19 +39,19 @@ public class NumberedAdapter extends RecyclerView.Adapter<TextViewHolder> {
 
     @Override
     public TextViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_ticket, parent, false);
         return new TextViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(final TextViewHolder holder, final int position) {
         final String label = labels.get(position);
-        holder.textView.setText(label);
-        holder.textView.setOnClickListener(new View.OnClickListener() {
+        holder.txtTicket.setText(label);
+        holder.bgTicket.setBackgroundColor(ticketItems.get(position).getColor());
+        holder.bgTicket.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(
-                        holder.textView.getContext(), label, Toast.LENGTH_SHORT).show();
+
             }
         });
     }
@@ -60,9 +63,12 @@ public class NumberedAdapter extends RecyclerView.Adapter<TextViewHolder> {
 }
 
 class TextViewHolder extends RecyclerView.ViewHolder {
-    public TextView textView;
+
+    public RelativeLayout bgTicket;
+    public TextView txtTicket;
     public TextViewHolder(View itemView) {
         super(itemView);
-        textView = (TextView) itemView.findViewById(R.id.text);
+        bgTicket = (RelativeLayout) itemView.findViewById(R.id.bgTicket);
+        txtTicket = (TextView) itemView.findViewById(R.id.txtTicket);
     }
 }

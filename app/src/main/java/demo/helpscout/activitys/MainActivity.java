@@ -10,8 +10,6 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 
 import demo.helpscout.R;
-import fragments.ConversationsFragment;
-import fragments.GridLayoutFragment;
 import fragments.ConversationsFragment2;
 
 public class MainActivity extends AppCompatActivity {
@@ -53,14 +51,11 @@ public class MainActivity extends AppCompatActivity {
         if (opcSelected.equals(getString(R.string.conversations))) {
             mTitle = getString(R.string.conversations);
             //TAG = TAG_HOME;
-            //fragment = new ConversationsFragment();
-            //fragment = new GridLayoutFragment();
             fragment = new ConversationsFragment2();
         }
 
         else{
             fragment = new ConversationsFragment2();
-            //fragment = new LoginFragment();
         }
 
 

@@ -6,25 +6,27 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         card_view:cardBackgroundColor="@color/md_white_1000"
-        android:background="@color/md_light_green_500"
+
         card_view:cardUseCompatPadding="true"
         card_view:cardElevation="4dp"
         card_view:cardCornerRadius="3dp"
         >
 
         <RelativeLayout
+            android:id="@+id/bgTicket"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp">
+            android:background="@color/md_light_green_500"
+            android:padding="4dp">
 
             <TextView
                 android:id="@+id/txtTicket"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Large Text"
+                android:text="Pendientes"
                 android:textColor="@color/md_white_1000"
-                android:textSize="12dp"
+                android:textSize="9dp"
                  />
         </RelativeLayout>
 

@@ -19,7 +19,6 @@ import java.util.List;
 
 //import adapters.ConversationAdapter2;
 import adapters.ConversationAdapter2;
-import adapters.ConversationAdapter3;
 import demo.helpscout.R;
 import objects.Conversation;
 import objects.Ticket;

@@ -8,8 +8,9 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <!--MailboxActivity-->
         <activity
-            android:name=".activitys.MailboxActivity"
+            android:name=".activitys.MailBoxesActivity"
             android:screenOrientation="portrait"
             android:label="@string/title_activity_mailbox"
             android:theme="@style/AppTheme.NoActionBar"
@@ -20,6 +21,24 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".activitys.ConversationActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+
+<!--
+        <activity
+            android:name=".activitys.MailBoxesActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+        -->
     </application>
 
 </manifest>
