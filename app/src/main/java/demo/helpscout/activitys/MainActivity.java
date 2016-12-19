@@ -2,7 +2,6 @@ package demo.helpscout.activitys;
 
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -14,10 +13,9 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
 
 import demo.helpscout.R;
-import fragments.ConversationsFragment2;
+import fragments.MailBoxFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -36,6 +34,10 @@ public class MainActivity extends AppCompatActivity {
 
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         navigationView = (NavigationView) findViewById(R.id.nav_view);
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_mailBox);
+        //navigationView.setNavigationItemSelectedListener(this);
+
         //navigationView.setNavigationItemSelectedListener(this);
         if (navigationView != null) {
             setupDrawerContent(navigationView);
@@ -43,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
        // drawerTitle = getResources().getString(R.string.welcome);
         if (savedInstanceState == null) {
-            selectItem("Bienvenido");
+            selectItem("MailBox");
             loadNavHeader();
         }
     }
@@ -146,14 +148,21 @@ public class MainActivity extends AppCompatActivity {
         Fragment fragment = null;
         String TAG = "TEST_A";
 
+        if (opcSelected.equals("MailBox")) {
+            mTitle = "MailBox";
+            //TAG = TAG_HOME;
+            fragment = new MailBoxFragment();
+        }
+
+
         if (opcSelected.equals(getString(R.string.conversations))) {
             mTitle = getString(R.string.conversations);
             //TAG = TAG_HOME;
-            fragment = new ConversationsFragment2();
+            //fragment = new ConversationsFragment2();
         }
 
         else{
-            fragment = new ConversationsFragment2();
+            fragment = new MailBoxFragment();
         }
 
 
