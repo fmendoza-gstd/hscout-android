@@ -22,7 +22,6 @@
             </intent-filter>
         </activity>
 
-        <!--  ConversationDetailsFragment
         <activity
             android:name=".activitys.ConversationActivity"
             android:label="@string/app_name"
@@ -32,7 +31,6 @@
         </activity>
 
 
-        frgment menu lateral 2
         <activity
             android:name=".activitys.MailBoxesActivity"
             android:label="@string/app_name"
@@ -40,7 +38,7 @@
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="adjustResize">
         </activity>
--->
+
     </application>
 
 </manifest>

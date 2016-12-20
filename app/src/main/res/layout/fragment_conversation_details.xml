@@ -6,6 +6,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
     <!-- Footer aligned to bottom -->
     <RelativeLayout
         android:id="@+id/footer"
@@ -56,6 +70,7 @@
     <!-- Scrollable Content below header and above footer -->
     <ScrollView
         android:id="@+id/container"
+        android:layout_marginTop="55dp"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_above="@id/footer">
