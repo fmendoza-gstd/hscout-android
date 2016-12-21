@@ -14,30 +14,25 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.joanzapata.iconify.IconDrawable;
+import com.joanzapata.iconify.fonts.FontAwesomeIcons;
 
-//import adapters.ConversationAdapter2;
-import adapters.ConversationAdapter2;
 import demo.helpscout.R;
-import objects.Conversation;
-import objects.Ticket;
-import objects.User;
 
 /**
- * Created by Gabriel on 13/12/2016.
+ * Created by Gabriel on 19/12/2016.
  */
-public class ConversationsFragment2   extends Fragment {
+public class MailBoxDetailsFragment  extends Fragment {
     View rootView;
     public static Context context;
-    public static ArrayList<Conversation> lstConversations = new ArrayList<Conversation>();
+
+    //public static ArrayList<Conversation> lstConversations = new ArrayList<Conversation>();
     private RecyclerView recyclerView;
     private StaggeredGridLayoutManager staggeredLayoutManager;
-    public ConversationAdapter2 adapter;
 
-    private static final String TAG_LIST_MATCH = "tag_list_match";
+    private static final String TAG_MAILBOX = "tag_mailBox";
 
-    public ConversationsFragment2() {
+    public MailBoxDetailsFragment() {
     }
 
     @Override
@@ -49,7 +44,7 @@ public class ConversationsFragment2   extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        rootView = inflater.inflate(R.layout.fragment_recycler, container, false);
+        rootView = inflater.inflate(R.layout.fragment_conversation_details, container, false);
         init();
 
 
@@ -68,7 +63,44 @@ public class ConversationsFragment2   extends Fragment {
         // TODO Add your menu entries here
         super.onCreateOptionsMenu(menu, inflater);
         menu.clear();
-        //inflater.inflate(R.menu.menu_main, menu);
+        inflater.inflate(R.menu.menu_conv_details, menu);
+
+        // Set an icon in the ActionBar
+        menu.findItem(R.id.action_menu_tools).setIcon(
+                new IconDrawable(context, FontAwesomeIcons.fa_list_ul)
+                        .colorRes(R.color.md_white_1000)
+                        .actionBarSize());
+
+            menu.findItem(R.id.action_tag).setIcon(
+                    new IconDrawable(context, FontAwesomeIcons.fa_tag)
+                            .colorRes(R.color.md_divider)
+                            .actionBarSize());
+
+
+            menu.findItem(R.id.action_flag).setIcon(
+                    new IconDrawable(context, FontAwesomeIcons.fa_flag)
+                            .colorRes(R.color.md_secondary_text_icons)
+                            .actionBarSize());
+
+            menu.findItem(R.id.action_user).setIcon(
+                    new IconDrawable(context, FontAwesomeIcons.fa_user)
+                            .colorRes(R.color.md_secondary_text_icons)
+                            .actionBarSize());
+
+
+            menu.findItem(R.id.action_trash).setIcon(
+                    new IconDrawable(context, FontAwesomeIcons.fa_trash)
+                            .colorRes(R.color.md_secondary_text_icons)
+                            .actionBarSize());
+
+
+
+
+        menu.findItem(R.id.menuSupport).setIcon(
+                new IconDrawable(context, FontAwesomeIcons.fa_angle_down)
+                        .colorRes(R.color.md_white_1000)
+                        .actionBarSize());
+
     }
 
     @Override
@@ -84,12 +116,12 @@ public class ConversationsFragment2   extends Fragment {
 
 
     private void init() {
-        getAllConversations();
+        //getAllConversations();
         initializeAdapter();
     }
 
     public static void getAllConversations() {
-
+/*
         User user1 = new User("Shawn", "Arden");
         User user2 = new User("Alen", "Johnson");
         User user3 = new User("Greg", "Fromme");
@@ -115,18 +147,11 @@ public class ConversationsFragment2   extends Fragment {
         lstConversations.add(new Conversation(user1, "9:15am", "10:25am", "Your J and G care package", "Note added", lstTickets3));
         lstConversations.add(new Conversation(user2, "Jul 12", "9:15am", "Please Check to see if you received my order?", "Kellie can you please help Mark while I'm away? Wou...", lstTickets2));
         lstConversations.add(new Conversation(user3, "Jul 4", "9:08am", "Re: Welcome to J and G, Let's get you started", "Kellie can you please help Mark while I'm away? Wou..", lstTickets1));
-
+*/
     }
 
     private void initializeAdapter() {
-        staggeredLayoutManager = new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL);
-        recyclerView = (RecyclerView) rootView.findViewById(R.id.list);
-        recyclerView.setLayoutManager(staggeredLayoutManager);
-        recyclerView.setHasFixedSize(true); //Data size is fixed - improves performance
 
-        //adapter = new ConversationAdapter3(getActivity(), lstConversations);
-        adapter = new ConversationAdapter2(getActivity(), lstConversations);
-        recyclerView.setAdapter(adapter);
     }
 
 

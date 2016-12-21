@@ -4,27 +4,27 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_home"
+            android:id="@+id/nav_unassugned"
             android:icon="@drawable/ic_home_black_24dp"
             android:title="Unassigned"
             app:actionLayout="@layout/menu_counter"/>
         <item
-            android:id="@+id/nav_photos"
+            android:id="@+id/nav_mine"
             android:icon="@drawable/ic_photo_library_black_24dp"
             app:actionLayout="@layout/menu_counter"
             android:title="Mine" />
         <item
-            android:id="@+id/nav_movies"
+            android:id="@+id/nav_drafts"
             android:icon="@drawable/ic_local_movies_black_24dp"
             android:title="Drafts" />
 
         <item
-            android:id="@+id/nav_notifications"
+            android:id="@+id/nav_assigned"
             android:icon="@drawable/ic_notifications_black_24dp"
             android:title="Assigned" />
 
         <item
-            android:id="@+id/nav_settings"
+            android:id="@+id/nav_closed"
             android:icon="@drawable/ic_settings_black_24dp"
             android:title="Closed" />
 
@@ -37,14 +37,14 @@
     <item android:title="TEAMS">
         <menu>
             <group android:checkableBehavior="single">
-            <item
-                android:id="@+id/nav_about_us"
-                android:icon="@drawable/ic_photo_library_black_24dp"
-                android:title="Product" />
-            <item
-                android:id="@+id/nav_privacy_policy"
-                android:icon="@drawable/ic_home_black_24dp"
-                android:title="Marketing" />
+                <item
+                    android:id="@+id/nav_product"
+                    android:icon="@drawable/ic_photo_library_black_24dp"
+                    android:title="Product" />
+                <item
+                    android:id="@+id/nav_marketing"
+                    android:icon="@drawable/ic_home_black_24dp"
+                    android:title="Marketing" />
             </group>
         </menu>
     </item>
@@ -54,14 +54,14 @@
     <item android:title="FOLDERS">
         <menu>
             <group android:checkableBehavior="single">
-            <item
-                android:id="@+id/nav_"
-                android:icon="@drawable/ic_photo_library_black_24dp"
-                android:title="1. VIP Conversations" />
-            <item
-                android:id="@+id/nav_privacy"
-                android:icon="@drawable/ic_home_black_24dp"
-                android:title="2. Waiting 6 Days" />
+                <item
+                    android:id="@+id/nav_folder_1"
+                    android:icon="@drawable/ic_photo_library_black_24dp"
+                    android:title="1. VIP Conversations" />
+                <item
+                    android:id="@+id/nav_folder_2"
+                    android:icon="@drawable/ic_home_black_24dp"
+                    android:title="2. Waiting 6 Days" />
             </group>
         </menu>
     </item>

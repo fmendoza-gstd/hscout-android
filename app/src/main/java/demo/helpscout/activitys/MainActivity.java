@@ -2,7 +2,6 @@ package demo.helpscout.activitys;
 
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -12,12 +11,25 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
+
+import com.joanzapata.iconify.IconDrawable;
+import com.joanzapata.iconify.Iconify;
+import com.joanzapata.iconify.fonts.EntypoModule;
+import com.joanzapata.iconify.fonts.FontAwesomeIcons;
+import com.joanzapata.iconify.fonts.FontAwesomeModule;
+import com.joanzapata.iconify.fonts.IoniconsModule;
+import com.joanzapata.iconify.fonts.MaterialCommunityModule;
+import com.joanzapata.iconify.fonts.MaterialModule;
+import com.joanzapata.iconify.fonts.MeteoconsModule;
+import com.joanzapata.iconify.fonts.SimpleLineIconsModule;
+import com.joanzapata.iconify.fonts.TypiconsModule;
+import com.joanzapata.iconify.fonts.WeathericonsModule;
 
 import demo.helpscout.R;
-import fragments.ConversationsFragment2;
+import fragments.MailBoxFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,24 +38,37 @@ public class MainActivity extends AppCompatActivity {
     private String ACTIONBAR_COLOR="#3ac065";
     public static CharSequence mTitle;
     public NavigationView navigationView;
+    public NavigationView navigationViewMailBox;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Iconify
+                .with(new FontAwesomeModule())
+                .with(new EntypoModule())
+                .with(new TypiconsModule())
+                .with(new MaterialModule())
+                .with(new MaterialCommunityModule())
+                .with(new MeteoconsModule())
+                .with(new WeathericonsModule())
+                .with(new SimpleLineIconsModule())
+                .with(new IoniconsModule());
+
         setContentView(R.layout.activity_main);
 
         setToolbar(); // Setear Toolbar como action bar
 
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         navigationView = (NavigationView) findViewById(R.id.nav_view);
-        //navigationView.setNavigationItemSelectedListener(this);
+        navigationViewMailBox = (NavigationView) findViewById(R.id.nav_mailBox);
+
         if (navigationView != null) {
             setupDrawerContent(navigationView);
         }
 
-       // drawerTitle = getResources().getString(R.string.welcome);
+        // drawerTitle = getResources().getString(R.string.welcome);
         if (savedInstanceState == null) {
-            selectItem("Bienvenido");
+            selectItem("MailBox");
             loadNavHeader();
         }
     }
@@ -78,6 +103,65 @@ public class MainActivity extends AppCompatActivity {
         // showing dot next to notifications label
         //navigationView.getMenu().getItem(3).setActionView(R.layout.menu_dot);
         navigationView.getMenu().getItem(3).setActionView(R.layout.menu_counter);
+        navigationView.getMenu().findItem(R.id.nav_unassugned).setIcon(
+                new IconDrawable(this, FontAwesomeIcons.fa_square_o)
+                        .colorRes(R.color.md_disabled_hint_text)
+                        .actionBarSize());
+
+        navigationView.getMenu().findItem(R.id.nav_unassugned).setIcon(
+                new IconDrawable(this, FontAwesomeIcons.fa_list_ul)
+                        .colorRes(R.color.md_disabled_hint_text)
+                        .actionBarSize());
+
+        navigationView.getMenu().findItem(R.id.nav_mine).setIcon(
+                new IconDrawable(this, FontAwesomeIcons.fa_hand_paper_o)
+                        .colorRes(R.color.md_disabled_hint_text)
+                        .actionBarSize());
+
+        navigationView.getMenu().findItem(R.id.nav_drafts).setIcon(
+                new IconDrawable(this, FontAwesomeIcons.fa_files_o)
+                        .colorRes(R.color.md_disabled_hint_text)
+                        .actionBarSize());
+
+        navigationView.getMenu().findItem(R.id.nav_assigned).setIcon(
+                new IconDrawable(this, FontAwesomeIcons.fa_files_o )
+                        .colorRes(R.color.md_disabled_hint_text)
+                        .actionBarSize());
+
+        navigationView.getMenu().findItem(R.id.nav_closed).setIcon(
+                new IconDrawable(this, FontAwesomeIcons.fa_archive )
+                        .colorRes(R.color.md_disabled_hint_text)
+                        .actionBarSize());
+
+        navigationView.getMenu().findItem(R.id.nav_spam).setIcon(
+                new IconDrawable(this, FontAwesomeIcons.fa_ban )
+                        .colorRes(R.color.md_disabled_hint_text)
+                        .actionBarSize());
+
+
+        navigationView.getMenu().findItem(R.id.nav_product).setIcon(
+                new IconDrawable(this, FontAwesomeIcons.fa_users )
+                        .colorRes(R.color.md_disabled_hint_text)
+                        .actionBarSize());
+
+        navigationView.getMenu().findItem(R.id.nav_marketing).setIcon(
+                new IconDrawable(this, FontAwesomeIcons.fa_users )
+                        .colorRes(R.color.md_disabled_hint_text)
+                        .actionBarSize());
+
+
+
+        navigationView.getMenu().findItem(R.id.nav_folder_1).setIcon(
+                new IconDrawable(this, FontAwesomeIcons.fa_folder_open_o )
+                        .colorRes(R.color.md_disabled_hint_text)
+                        .actionBarSize());
+
+        navigationView.getMenu().findItem(R.id.nav_folder_2).setIcon(
+                new IconDrawable(this, FontAwesomeIcons.fa_folder_open_o )
+                        .colorRes(R.color.md_disabled_hint_text)
+                        .actionBarSize());
+
+
         //TextView view = (TextView) navigationView.getMenu().findItem(1).getActionView();
         //view.setText(6 > 0 ? String.valueOf(6) : null);
     }
@@ -85,6 +169,7 @@ public class MainActivity extends AppCompatActivity {
     private void setToolbar() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
         final ActionBar ab = getSupportActionBar();
         if (ab != null) {
             // Poner ícono del drawer toggle
@@ -93,6 +178,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     private void setupDrawerContent(NavigationView navigationView) {
+
         navigationView.setNavigationItemSelectedListener(
                 new NavigationView.OnNavigationItemSelectedListener() {
 
@@ -108,15 +194,12 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
         );
+
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        if (!drawerLayout.isDrawerOpen(GravityCompat.START)) {
-            getMenuInflater().inflate(R.menu.activity_main_drawer, menu);
-            restoreActionBar();
-            return true;
-        }
-        return super.onCreateOptionsMenu(menu);
+        getMenuInflater().inflate(R.menu.menu_conv_details, menu);
+        return true;
     }
     public void restoreActionBar() {
         ActionBar actionBar = getSupportActionBar();
@@ -130,11 +213,22 @@ public class MainActivity extends AppCompatActivity {
     /* btn Back in fragments */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
 
-        switch (item.getItemId()) {
+        switch (id) {
             case android.R.id.home:
                 drawerLayout.openDrawer(GravityCompat.START);
                 return true;
+
+            case R.id.menuSupport:
+                //drawerLayout.openDrawer(GravityCompat.START);
+                if (drawerLayout.isDrawerOpen(Gravity.RIGHT)) {
+                    drawerLayout.closeDrawer(Gravity.RIGHT);
+                } else {
+                    drawerLayout.openDrawer(Gravity.RIGHT);
+                }
+                return true;
+
         }
         return super.onOptionsItemSelected(item);
     }
@@ -146,15 +240,23 @@ public class MainActivity extends AppCompatActivity {
         Fragment fragment = null;
         String TAG = "TEST_A";
 
+        if (opcSelected.equals("MailBox")) {
+            mTitle = "MailBox";
+            //TAG = TAG_HOME;
+            fragment = new MailBoxFragment();
+        }
+
+
         if (opcSelected.equals(getString(R.string.conversations))) {
             mTitle = getString(R.string.conversations);
             //TAG = TAG_HOME;
-            fragment = new ConversationsFragment2();
+            //fragment = new ConversationsFragment2();
         }
 
         else{
-            fragment = new ConversationsFragment2();
+            fragment = new MailBoxFragment();
         }
+
 
 
         if (fragment != null) {
@@ -167,7 +269,7 @@ public class MainActivity extends AppCompatActivity {
         } else {
             //Log.e("Error  ", "MostrarFragment" + position);//Si el fragment es nulo mostramos un mensaje de error.
         }
-       // drawerLayout.closeDrawers(); // Cerrar drawer
+        // drawerLayout.closeDrawers(); // Cerrar drawer
         setTitle(mTitle); // Setear título actual
 
     }

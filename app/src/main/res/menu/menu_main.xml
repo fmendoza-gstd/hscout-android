@@ -4,10 +4,11 @@
     tools:context=".view.MainActivity">
 
     <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:title="action_settings"
-        app:showAsAction="never" />
+        android:id="@+id/menuSupport"
+        android:icon="@mipmap/ic_street"
+        android:orderInCategory="10"
+        app:showAsAction="ifRoom|collapseActionView"
+        android:title="Menu"/>
 
 
 </menu>
