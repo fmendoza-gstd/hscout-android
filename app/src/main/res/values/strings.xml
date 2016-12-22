@@ -2,4 +2,18 @@
     <string name="app_name">HelpScout</string>
     <string name="conversations">conversations</string>
     <string name="title_activity_mailbox">MailboxActivity</string>
+
+    <string name="email_address">Email Address</string>
+    <string name="psw">Password</string>
+    <string name="login">Login</string>
+
+    <string name="close">Close</string>
+    <string name="title_dialog_replay">Replay</string>
+    <string name="send">Send</string>
+    <string name="bcc">Cc/Bcc</string>
+    <string name="messange">Messange</string>
+
+    <string name="email_to_field">Email To:</string>
+    <string name="support_email">software@globalstd.com</string>
+    <string name="subject">Subject</string>
 </resources>

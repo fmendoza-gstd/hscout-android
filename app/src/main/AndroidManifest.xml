@@ -8,18 +8,24 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <!--MailboxActivity-->
+
         <activity
-            android:name=".activitys.MainActivity"
-            android:screenOrientation="portrait"
-            android:label="@string/title_activity_mailbox"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustResize">
+            android:name=".activitys.LoginActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".activitys.MainActivity"
+            android:label="@string/title_activity_mailbox"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustResize"
+            android:screenOrientation="portrait">
         </activity>
 
     </application>

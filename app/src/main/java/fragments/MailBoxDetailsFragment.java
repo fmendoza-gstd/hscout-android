@@ -13,11 +13,13 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 
 import com.joanzapata.iconify.IconDrawable;
 import com.joanzapata.iconify.fonts.FontAwesomeIcons;
 
 import demo.helpscout.R;
+import dialogs.ReplayDialog;
 
 /**
  * Created by Gabriel on 19/12/2016.
@@ -116,6 +118,14 @@ public class MailBoxDetailsFragment  extends Fragment {
 
 
     private void init() {
+        RelativeLayout btnReplay = (RelativeLayout) rootView.findViewById(R.id.btnReplay);
+        btnReplay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showReplayDialog();
+            }
+        });
+
         //getAllConversations();
         initializeAdapter();
     }
@@ -159,5 +169,12 @@ public class MailBoxDetailsFragment  extends Fragment {
     private void conversationDescrition() {
         //Snackbar.make(rootView, "No puedes aceptar una apuesta lanzada por ti", Snackbar.LENGTH_LONG).setAction("Action", null).show();
 
+    }
+
+
+    public void showReplayDialog(){
+        // Create the fragment and show it as a dialog.
+        ReplayDialog dialog = new ReplayDialog();
+        dialog.show(getFragmentManager(), "tag_somepopup");
     }
 }
