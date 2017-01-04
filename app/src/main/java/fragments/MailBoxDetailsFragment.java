@@ -6,11 +6,13 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
@@ -32,7 +34,7 @@ public class MailBoxDetailsFragment  extends Fragment {
     private RecyclerView recyclerView;
     private StaggeredGridLayoutManager staggeredLayoutManager;
 
-    private static final String TAG_MAILBOX = "tag_mailBox";
+    private static final String TAG_MAILBOX_DETAILS = "tag_mailBox_details";
 
     public MailBoxDetailsFragment() {
     }
@@ -176,5 +178,30 @@ public class MailBoxDetailsFragment  extends Fragment {
         // Create the fragment and show it as a dialog.
         ReplayDialog dialog = new ReplayDialog();
         dialog.show(getFragmentManager(), "tag_somepopup");
+    }
+    public void showTags(){
+        Fragment fragment = new TagsFragment();
+        FragmentTransaction fragmentManager = getFragmentManager().beginTransaction();
+        //fragmentManager.setCustomAnimations(R.anim.slide_in_left, R.anim.slide_out_left);
+        fragmentManager.replace(R.id.main_content, fragment, TAG_MAILBOX_DETAILS);
+        fragmentManager.addToBackStack(TAG_MAILBOX_DETAILS);
+        fragmentManager.commit();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_tag) {
+            showTags();
+            return true;
+        }
+
+
+        return super.onOptionsItemSelected(item);
     }
 }

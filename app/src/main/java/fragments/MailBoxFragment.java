@@ -135,7 +135,7 @@ public class MailBoxFragment extends Fragment {
                 FragmentTransaction fragmentManager = getFragmentManager().beginTransaction();
                 //fragmentManager.setCustomAnimations(R.anim.slide_in_left, R.anim.slide_out_left);
                 fragmentManager.replace(R.id.main_content, fragment, TAG_MAILBOX);
-                //fragmentManager.addToBackStack(TAG);
+                fragmentManager.addToBackStack(TAG_MAILBOX);
                 fragmentManager.commit();
             }
         });
