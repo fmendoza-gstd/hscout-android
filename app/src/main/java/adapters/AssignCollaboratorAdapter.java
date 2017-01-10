@@ -8,9 +8,9 @@ import android.widget.BaseAdapter;
 import demo.helpscout.R;
 
 /**
- * Created by Gabriel on 19/12/2016.
+ * Created by Gabriel on 05/01/2017.
  */
-public class MailboxAdapter extends BaseAdapter {
+public class AssignCollaboratorAdapter extends BaseAdapter {
     @Override
     public int getCount() {
         return 6;
@@ -29,7 +29,7 @@ public class MailboxAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         if(convertView == null) {
-            convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_mailbox, parent, false);
+            convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_select_collaborator, parent, false);
         }
         return convertView;
     }

@@ -21,9 +21,11 @@
             android:orientation="horizontal">
 
             <RelativeLayout
+                android:id="@+id/btnAddNotes"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:background="@color/md_black_1000"
+                android:clickable="true"
+                android:background="@drawable/ripple_button_black"
                 android:layout_weight="2">
 
                 <com.joanzapata.iconify.widget.IconTextView
@@ -43,7 +45,8 @@
                 android:id="@+id/btnReplay"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:background="@color/md_black_1000"
+                android:clickable="true"
+                android:background="@drawable/ripple_button_black"
                 android:layout_weight="2">
 
                 <com.joanzapata.iconify.widget.IconTextView

@@ -128,6 +128,14 @@ public class MailBoxDetailsFragment  extends Fragment {
             }
         });
 
+        RelativeLayout btnAddNotes = (RelativeLayout) rootView.findViewById(R.id.btnAddNotes);
+        btnAddNotes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showAddNotes();
+            }
+        });
+
         //getAllConversations();
         initializeAdapter();
     }
@@ -178,6 +186,16 @@ public class MailBoxDetailsFragment  extends Fragment {
         // Create the fragment and show it as a dialog.
         ReplayDialog dialog = new ReplayDialog();
         dialog.show(getFragmentManager(), "tag_somepopup");
+    }
+
+
+    public void showAddNotes(){
+        Fragment fragment = new NoteFragment();
+        FragmentTransaction fragmentManager = getFragmentManager().beginTransaction();
+        //fragmentManager.setCustomAnimations(R.anim.slide_in_left, R.anim.slide_out_left);
+        fragmentManager.replace(R.id.main_content, fragment, TAG_MAILBOX_DETAILS);
+        fragmentManager.addToBackStack(TAG_MAILBOX_DETAILS);
+        fragmentManager.commit();
     }
     public void showTags(){
         Fragment fragment = new TagsFragment();

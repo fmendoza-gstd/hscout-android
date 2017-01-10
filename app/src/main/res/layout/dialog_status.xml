@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- Active -->
+    <RelativeLayout
+
+        android:id="@+id/btnActive"
+        android:clickable="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:layout_weight="1"
+        android:background="@drawable/ripple_button_black">
+
+        <TextView
+            android:id="@+id/lblActive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/active"
+            android:textColor="@color/md_white_1000"
+            android:textSize="20sp"
+
+            android:gravity="center_horizontal"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="10dp" />
+
+    </RelativeLayout>
+
+    <!-- Pending -->
+    <RelativeLayout
+        android:id="@+id/btnPending"
+        android:clickable="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:layout_weight="1"
+        android:background="@drawable/ripple_button_black">
+
+        <TextView
+            android:id="@+id/lblPending"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/pending"
+            android:textColor="@color/md_white_1000"
+            android:textSize="20sp"
+
+            android:gravity="center_horizontal"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="10dp" />
+
+    </RelativeLayout>
+
+    <!-- Closed -->
+    <RelativeLayout
+
+        android:id="@+id/btnClosed"
+        android:clickable="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:layout_weight="1"
+        android:background="@drawable/ripple_button_black">
+
+        <TextView
+            android:id="@+id/lblClosed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/close"
+            android:textColor="@color/md_white_1000"
+            android:textSize="20sp"
+
+            android:gravity="center_horizontal"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="10dp" />
+
+    </RelativeLayout>
+
+    <!-- Spam -->
+    <RelativeLayout
+
+        android:id="@+id/btnSpam"
+        android:clickable="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:layout_weight="1"
+        android:background="@drawable/ripple_button_black">
+
+        <TextView
+            android:id="@+id/lblSpam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/spam"
+            android:textColor="@color/md_white_1000"
+            android:textSize="20sp"
+
+            android:gravity="center_horizontal"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="10dp" />
+
+    </RelativeLayout>
+
+</LinearLayout>

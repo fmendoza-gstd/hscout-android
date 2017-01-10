@@ -3,11 +3,11 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:color="@color/md_white_1000">     <!-- ripple color -->
 
-    <!-- for Button -->
+    <!-- for Button  <corners android:radius="3dp" />-->
     <item>
         <shape android:shape="rectangle">
-            <corners android:radius="3dp" />
-            <solid android:color="#3997d4"/>
+
+            <solid android:color="#000"/>
         </shape>
     </item>
 

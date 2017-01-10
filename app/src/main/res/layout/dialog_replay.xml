@@ -96,7 +96,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
                     android:layout_weight="1"
-                    android:background="@drawable/ripple_button_blue">
+                    android:background="@drawable/ripple_button_black">
 
                     <TextView
                         android:id="@+id/lblSend"

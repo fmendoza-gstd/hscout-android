@@ -94,7 +94,7 @@
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
                     android:layout_weight="1"
-                    android:background="@drawable/ripple_button_blue"
+                    android:background="@drawable/ripple_button_black"
                     android:layout_marginTop="20dp">
 
                     <TextView

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_margin="10dp"
+    android:padding="10dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|center_vertical"
+            android:layout_marginRight="10dp">
+
+            <RelativeLayout
+                android:id="@+id/framing"
+                android:layout_width="40dp"
+                android:layout_height="50dp"
+                android:background="@color/md_white_1000">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/perfil1"/>
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/txtReplyollaborator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="_@eduardo"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textSize="16dp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:textColor="#000"
+            android:layout_gravity="center_vertical" />
+
+        <TextView
+            android:id="@+id/txtNameCollaborator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Eduardo Vazquez"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textSize="16dp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/md_grey_400"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp" />
+
+
+
+
+    </LinearLayout>
+</RelativeLayout>
